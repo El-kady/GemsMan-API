@@ -15,14 +15,9 @@
     <%= link_to "Gems Man", root_path, {:class => "header item header-logo"} %>
 
     <% if user_signed_in? %>
-        <%= link_to ruby_gems_path, :class => 'item' do %>
-            <i class="block layout icon"></i> Gems
-        <% end %>
+
 
         <% if current_user.try(:is_admin?) %>
-            <%= link_to libraries_path, :class => 'item' do %>
-                <i class="users icon"></i> Libraries
-            <% end %>
             <%= link_to users_path, :class => 'item' do %>
                 <i class="users icon"></i> Users
             <% end %>
