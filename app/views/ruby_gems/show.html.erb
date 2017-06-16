@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ruby_gem.name %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @ruby_gem.version %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @ruby_gem.user %>
+</p>
+
+<%= link_to 'Edit', edit_ruby_gem_path(@ruby_gem) %> |
+<%= link_to 'Back', ruby_gems_path %>
