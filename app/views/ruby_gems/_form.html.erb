@@ -1,0 +1,32 @@
+<%= form_for(ruby_gem, :html => {:class => "ui large form error"}) do |f| %>
+
+    <%= render 'layouts/error_messages', object: ruby_gem %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :version %>
+      <%= f.text_field :version %>
+    </div>
+
+    <div class="ui segment field">
+      <%= f.label "system Libraries" %>
+      <div id="libraries">
+        <%= f.fields_for :libraries do |library| %>
+            <%= render 'library_fields', f: library %>
+        <% end %>
+        <div class="links">
+          <%= link_to_add_association  f, :libraries do %>
+              <i class="plus icon"></i> Add Library
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Save", :class => "ui small blue submit button" %>
+    </div>
+<% end %>

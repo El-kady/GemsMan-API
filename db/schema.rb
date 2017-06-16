@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170616181403) do
+ActiveRecord::Schema.define(version: 20170616182144) do
+
+  create_table "libraries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "name"
+    t.string   "os_name"
+    t.integer  "ruby_gem_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["ruby_gem_id"], name: "index_libraries_on_ruby_gem_id", using: :btree
+  end
 
   create_table "ruby_gems", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "name"
@@ -40,5 +49,6 @@ ActiveRecord::Schema.define(version: 20170616181403) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "libraries", "ruby_gems"
   add_foreign_key "ruby_gems", "users"
 end
