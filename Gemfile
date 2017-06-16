@@ -49,5 +49,10 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+# My Tools
+gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
+gem 'devise'
+gem 'pg'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
