@@ -50,6 +50,7 @@ GEM
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.0.6)
+    cancancan (1.17.0)
     cocoon (1.2.10)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -177,6 +178,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  cancancan (~> 1.10)
   cocoon
   coffee-rails (~> 4.2)
   devise
@@ -197,4 +199,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.14.6
+   1.15.1

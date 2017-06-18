@@ -10,6 +10,7 @@
   <thead>
   <tr>
     <th>Name</th>
+    <th>By</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -18,6 +19,7 @@
   <% if @ruby_gems.each do |ruby_gem| %>
       <tr>
         <td><%= ruby_gem.name %></td>
+        <td><%= ruby_gem.user.email %></td>
         <td class="right aligned">
           <div class="ui buttons mini">
             <%= link_to edit_ruby_gem_path(ruby_gem), class: "ui button" do %>

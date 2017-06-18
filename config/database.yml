@@ -48,7 +48,6 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: GemsMan-API_production
-  username: GemsMan-API
-  password: <%= ENV['GEMSMAN-API_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  url: <%= ENV['DATABASE_URL'] %>

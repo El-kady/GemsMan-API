@@ -1,8 +1,13 @@
-<div class="field nested-fields">
-  <div class="ui action input">
+<div class="ui segment nested-fields">
+  <div class="field">
+    <%= f.label :name %>
     <%= f.text_field :name, placeholder: :name %>
-    <%= link_to_remove_association f, :class => "ui red icon button" do %>
-        <i class="remove icon"></i>
-    <% end %>
   </div>
+  <div class="field">
+    <%= f.label "Operating System" %>
+    <%= f.select(:os_name, ["ubuntu","centos"].map { |value| [ value.to_s.capitalize, value ] }, placeholder: :os_name) %>
+  </div>
+  <%= link_to_remove_association f, :class => "ui tiny red icon button" do %>
+      <i class="remove icon"></i> Remove
+  <% end %>
 </div>

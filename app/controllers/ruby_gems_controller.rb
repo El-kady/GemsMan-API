@@ -1,10 +1,11 @@
 class RubyGemsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_ruby_gem, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
   semantic_breadcrumb "Gems", :ruby_gems_path
 
   def index
-    @ruby_gems = RubyGem.all
+    @ruby_gems = RubyGem.all.accessible_by(current_ability)
   end
 
   def show
@@ -50,6 +51,6 @@ class RubyGemsController < ApplicationController
   end
 
   def ruby_gem_params
-    params.require(:ruby_gem).permit(:name, :version, libraries_attributes: [:id, :name, :_destroy])
+    params.require(:ruby_gem).permit(:name, :version, libraries_attributes: [:id, :name, :os_name, :_destroy])
   end
 end
